@@ -7,3 +7,9 @@ else
 	echo -e "$dir is not a directory!\n"
 	exit 101
 fi
+
+echo "The heaviest subfolder of $dir is:"
+top1=$(du /home/pystud27 -d 1 2>/dev/null | sort -rn | head -n 2 | tail -n 1 | cut -f 2)
+disk=$(du /home/pystud27 -d 1 2>/dev/null | sort -rn | head -n 2 | tail -n 1 | cut -f 1)
+
+echo -e "$top1 with disk usage of $disk"
